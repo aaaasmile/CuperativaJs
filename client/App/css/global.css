@@ -1,0 +1,324 @@
+﻿@import url("960_16_col_min.css");
+
+body, html {
+    height: 100%;
+}
+
+body {
+    font-family: "Helvetica Neue" , Helvetica, Arial, "Lucida Grande" , sans-serif;
+    font-size: 12px;
+    background: #f4f4f4;
+    color: #333;
+}
+
+a {
+    color: #0072bb;
+    cursor: pointer;
+    cursor: hand;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #0072bb;
+}
+
+a:hover {
+    color: #ff4500;
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica Neue" , Helvetica, Arial, sans-serif;
+}
+h1 {
+    font-size: 29px;
+}
+
+h2 {
+    font-size: 21px;
+}
+h2 .weak {
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 15px;
+}
+
+.big-button {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Helvetica Neue" , Helvetica, Arial, sans-serif;
+    padding: 10px 25px;
+}
+
+/* Login form  START */
+
+#login-wrap {
+    border: 1px solid #c3c3c3;
+    background: #f8f8f8;
+}
+
+#login-lpan {
+    box-shadow: 1px 1px 6px #ccc;
+    -moz-box-shadow: 1px 1px 6px #ccc;
+    -webkit-box-shadow: 1px 1px 6px #ccc;
+    background: #fff;
+}
+
+#login-form {
+    padding: 20px 40px;
+}
+
+#piage h1 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+}
+.login-form-label {
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 3px;
+}
+.login-form-note {
+    color: #999999;
+}
+.login-form-label a {
+    font-weight: normal;
+}
+.login-form-input {
+    border: 1px solid #e1e1e1;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    resize: none;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    box-sizing: border-box;
+}
+.login-form-input:focus {
+    border: 1px solid #e5a900;
+}
+#login-form-button {
+    text-align: right;
+    margin-top: 20px;
+}
+#login-rpan {
+    padding-top: 20px;
+}
+#login-page h2 {
+    margin: 0;
+    margin-bottom: 20px;
+}
+.login-form-error {
+    color: red;
+    font-weight: bold;
+    display: none;
+}
+
+/* Login form  END */
+
+.product {
+    float: left;
+    width: 270px;
+    height: 110px;
+    margin: 5px;
+    padding: 5px;
+    -moz-box-shadow: inset 0 0 30px rgba(0,0,0,0.15);
+    -webkit-box-shadow: inset 0 0 30px rgba(0,0,0,0.15);
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.15);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background-image: none;
+    cursor: pointer;
+}
+
+/* Section for card game gui*/
+/* front è il dorso, back è il davanti della carta, nell'esempio il tipo ha messo tutto a rovescio*/
+
+.g-table {
+    height: 600px;
+    background-image: url('../images/table_h600.jpg');
+    position: relative;
+}
+.g-canvas {
+    height: 100%;
+}
+
+.g-name {
+    height: 45px;
+    width: 140px;
+    background-color: Aqua;
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 20;
+}
+
+.g-name_onturn {
+    background-color: Black;
+    color: White;
+}
+
+#me_cards {
+    position: relative;
+}
+
+#opp_cards {
+    position: relative;
+}
+
+
+#deck_cards {
+    position: absolute;
+    z-index: 25;
+}
+
+
+.opp_single_card {
+    position: absolute;
+}
+
+
+.card {
+    -webkit-perspective: 600;
+    position: absolute;
+    transition: all .3s;
+    -moz-transition: all .6s;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    -ms-transition: all .3s;
+    cursor: pointer;
+}
+
+.face {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -moz-transition-property: opacity, -moz-transform, -moz-box-shadow;
+    -moz-transition-duration: .3s;
+    -webkit-transition-property: opacity, -webkit-transform, -webkit-box-shadow;
+    -webkit-transition-duration: .3s;
+    -o-transition-property: opacity, -o-transform, -o-box-shadow;
+    -o-transition-duration: .3s;
+    -ms-transition-property: opacity, -o-transform, -o-box-shadow;
+    -ms-transition-duration: .3s;
+    transition-property: opacity, transform, box-shadow;
+    transition-duration: .3s;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+
+.dorso {
+    z-index: 10;
+}
+
+.davanti {
+    -moz-transform: rotate3d(0,1,0,-180deg);
+    -webkit-transform: rotate3d(0,1,0,-180deg);
+    -o-transform: rotate3d(0,1,0,-180deg);
+    -ms-transform: rotate3d(0,1,0,-180deg);
+    transform: rotate3d(0,1,0,-180deg);
+    z-index: 8;
+}
+
+.card:hover .face {
+    -webkit-box-shadow: 0 0 20px #aaaaaa;
+    -moz-box-shadow: 0 0 20px #aaaaaa;
+    -o-box-shadow: 0 0 20px #aaaaaa;
+    -ms-box-shadow: 0 0 20px #aaaaaa;
+    box-shadow: 0 0 10px #aaaaaa;
+}
+
+.card-flipped .dorso {
+    -moz-transform: rotate3d(0,1,0,180deg);
+    -webkit-transform: rotate3d(0,1,0,180deg);
+    -o-transform: rotate3d(0,1,0,180deg);
+    -ms-transform: rotate3d(0,1,0,180deg);
+    transform: rotate3d(0,1,0,180deg); /* ensure the dorso face is below the davanti face */
+    z-index: 8;
+}
+
+.card-flipped .davanti {
+    -moz-transform: rotate3d(0,1,0,0deg);
+    -webkit-transform: rotate3d(0,1,0,0deg);
+    -o-transform: rotate3d(0,1,0,0deg);
+    -ms-transform: rotate3d(0,1,0,0deg);
+    transform: rotate3d(0,1,0,0deg); /* ensure the davanti face is on top of the dorso face */
+    z-index: 10;
+}
+
+.item-invisible {
+    opacity: 0;
+    display: none\9;
+}
+
+#brisc_cont {
+    position: absolute;
+    margin: 0 auto;
+}
+
+.briscola {
+    position: absolute;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+}
+
+.briscola_img{
+    position: absolute;
+    z-index: 5;
+}
+
+.briscola_lbl {
+    position: absolute;
+    left: 0px;
+    top: -30px;
+    color: White;
+    z-index: 1;
+}
+
+.deck_single_card {
+    position: absolute;
+    z-index: 30;
+}
+
+.single_card_played {
+    position: absolute;
+    z-index: 40;
+}
+
+.absolute_image {
+    position: absolute;
+}
+
+.deck_rep_num {
+    position: absolute;
+    color: White;
+    z-index: 35;
+}
+
+#lbl_deck_info_id {
+    position: absolute;
+    left: 10px;
+    top: 30px;
+}
+
+.g-invalid-card {
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+}
