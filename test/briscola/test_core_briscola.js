@@ -86,7 +86,7 @@ function (mod_player, mod_algbri, mod_core_brisc, mod_gamerepl) {
             event_num = core.process_only_one_action();
         }
         _log.debug('Nothing happen anymore, test terminated');
-    }, true);
+    });
 
     test("test calcola punteggio", function () {
         var core = mod_core_brisc.core_briscola_ctor();
